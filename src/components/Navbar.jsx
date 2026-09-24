@@ -15,7 +15,7 @@ return (
         src={Logo}
         alt="FitLog Logo"
         width={30}
-        height={30}
+        height={20}
       />
 
       <span> FITLOG</span>

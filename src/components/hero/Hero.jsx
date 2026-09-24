@@ -30,8 +30,7 @@ function HeroSection() {
               BROWSE WORKOUTS
             </Link>
           </div>
-
-          {/* Right Image */}
+          
           <div className="flex justify-center md:justify-end">
             <Image
               src={HeroImage}

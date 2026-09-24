@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { CiClock2 } from "react-icons/ci";
+import { FiStar, FiZap } from "react-icons/fi";
 
 
 
@@ -21,7 +23,7 @@ function WorkoutCard({ workout }) {
       <div className="p-5">
 
         {/* Muscle Groups */}
-        <div className="mb-4 flex gap-2">
+        <div className="mb-2 flex gap-2">
           {workout.muscleGroups.map((muscle) => (
             <span
               key={muscle}
@@ -47,19 +49,27 @@ function WorkoutCard({ workout }) {
 
         {/* Stats */}
         <div className="flex items-center gap-4 text-sm text-gray-400">
-
-          <span>
-            ◷ {workout.duration} min
+            <div className="flex   items-center gap-1">
+              <CiClock2 />
+              <span>
+             {workout.duration} min
           </span>
 
+            </div>
+          <div className="flex items-center gap-1">
+               <FiZap />
           <span>
-            ● {workout.caloriesBurned} kcal
+             {workout.caloriesBurned} kcal
+          </span>
+          </div>
+           
+           <div className="flex items-center gap-1">
+             <FiStar/>
+          <span>
+             {workout.rating}
           </span>
 
-          <span>
-            ☆ {workout.rating}
-          </span>
-
+           </div>
         </div>
       </div>
     </div>
