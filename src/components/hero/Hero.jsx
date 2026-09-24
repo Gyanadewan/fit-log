@@ -4,7 +4,7 @@ import HeroImage from "@/assets/banner.png";
 
 function HeroSection() {
   return (
-    <section className="container mx-auto px-5 py-8 md:py-10">
+    <section className="container mx-auto  py-8 md:py-10">
       <div className="w-full rounded-3xl border border-[#222630] bg-gray-800">
         <div className="grid items-center gap-5 md:grid-cols-2 py-5">
 
