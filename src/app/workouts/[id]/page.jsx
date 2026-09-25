@@ -1,5 +1,6 @@
+import SaveButton from "@/components/SaveButton";
+import AddToPlanButton from "@/components/shared/AddToPlanButton";
 import Image from "next/image";
-import { FiBookmark, FiPlus } from "react-icons/fi";
 
 const getWorkout = async (id) => {
   const res = await fetch(
@@ -22,7 +23,6 @@ async function WorkoutDetailsPage({ params }) {
 
         <div className="grid md:grid-cols-2 gap-5 px-5">
 
-          {/* Image */}
           <div className="relative h-[300px] md:h-[500px]">
             <Image
               src={workout.image}
@@ -32,20 +32,16 @@ async function WorkoutDetailsPage({ params }) {
             />
           </div>
 
-          {/* Details */}
           <div>
 
-            {/* Name */}
             <h1 className="text-[26px] font-black uppercase leading-none">
               {workout.name}
             </h1>
 
-            {/* Description */}
             <p className="mt-2 max-w-lg text-[13px] leading-4 text-gray-400">
               {workout.description}
             </p>
 
-            {/* Muscle Groups */}
             <div className="mt-3 flex gap-2">
               {workout.muscleGroups.map((muscle) => (
                 <span
@@ -57,7 +53,7 @@ async function WorkoutDetailsPage({ params }) {
               ))}
             </div>
 
-            {/* Specs */}
+      
             <div className="mt-4 overflow-hidden rounded-lg border border-[#222630] bg-[#15181E]">
 
               <div className="flex items-center justify-between border-b border-[#222630] px-3 py-2.5">
@@ -132,7 +128,6 @@ async function WorkoutDetailsPage({ params }) {
 
             </div>
 
-            {/* Instructions */}
             <div className="mt-4">
 
               <h2 className="text-[16px] font-black uppercase">
@@ -156,16 +151,11 @@ async function WorkoutDetailsPage({ params }) {
 
             </div>
 
-            {/* Buttons */}
             <div className="mt-5 flex gap-2">
 
-              <button className=" flex items-center gap-2 rounded-md bg-[#ccff00] px-4 py-2 text-[11px] font-bold text-black">
-                <FiPlus></FiPlus> ADD TO TODAY'S PLAN
-              </button>
+              <AddToPlanButton workout={workout}></AddToPlanButton>
 
-              <button className=" flex items-center gap-2 rounded-md border border-[#333740] px-4 py-2 text-[11px] font-medium text-gray-300">
-                <FiBookmark className="text-sm" /> SAVE FOR LATER
-              </button>
+             <SaveButton workout={workout}></SaveButton>
 
             </div>
 

@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/assets/logo.png";
+import { FitlogContext } from "@/app/context/FitLogContext";
+import { useContext } from "react";
 
 function Navbar() {
+    const { plan,saved } = useContext(FitlogContext);
+
 return ( 
      <nav className="border-b border-white/10 bg-black text-white">
      <div className=" container mx-auto flex  items-center justify-between   py-5 ">
@@ -31,7 +36,7 @@ return (
       </Link>
 
       <Link
-        href="/my-plan"
+        href="/myplan"
         className="font-medium text-gray-400 hover:text-white"
       >
         My Plan
@@ -43,14 +48,14 @@ return (
         href="/my-plan"
         className="rounded-full bg-[#ccff00] px-4 py-2 text-sm font-bold text-black"
       >
-        Plan 0
+        Plan { plan.length}
       </Link>
 
       <Link
         href="/my-plan"
         className="rounded-full border border-[#ccff00] px-4 py-2 text-sm font-bold text-[#ccff00]"
       >
-        Saved 0
+        Saved {saved.length}
       </Link>
     </div>
 
