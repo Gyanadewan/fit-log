@@ -5,7 +5,7 @@ import Logo from "@/assets/logo.png";
 function Navbar() {
 return ( 
      <nav className="border-b border-white/10 bg-black text-white">
-     <div className=" container mx-auto flex  items-center justify-between   py-5">
+     <div className=" container mx-auto flex  items-center justify-between   py-5 ">
 
     <Link
       href="/"

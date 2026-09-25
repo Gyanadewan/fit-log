@@ -1,13 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CiClock2 } from "react-icons/ci";
 import { FiStar, FiZap } from "react-icons/fi";
 
 
 
 function WorkoutCard({ workout }) {
-  console.log("work out data single",workout)
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] text-white">
+      <Link href={`/workouts/${workout.id}`}>
+        <div className="overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] text-white">
 
       {/* Image */}
       <div className="relative h-48 w-full">
@@ -73,6 +75,8 @@ function WorkoutCard({ workout }) {
         </div>
       </div>
     </div>
+      
+      </Link>
   );
 }
 
