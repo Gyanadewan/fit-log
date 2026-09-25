@@ -1,4 +1,6 @@
+
 import WorkoutCard from "@/components/shared/WorkoutCard";
+import MyPlanPage from "../myplan/page";
 
 const getWorkouts = async () => {
  const res = await fetch ("https://api.abcz.workers.dev/api/fitlog")
@@ -12,9 +14,11 @@ async function WorkoutsPage() {
          <h2 className="text-2xl font-bold">THE LIBRARY</h2>
          <p >Twelve lifts covering every major muscle group.</p>
          <div className="grid grid-cols-3 gap-4 my-10">
-            {
-                workouts.map(workout => <WorkoutCard key={workout.id} workout={workout}></WorkoutCard>)  
-            }
+             {workouts.map((workout) => (
+          <div key={workout.id}>
+              <WorkoutCard workout={workout} />
+              </div>
+            ))}
          </div>
 
     </div>

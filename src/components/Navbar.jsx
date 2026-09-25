@@ -45,14 +45,14 @@ return (
 
     <div className="flex items-center gap-2">
       <Link
-        href="/my-plan"
+        href="/myplan"
         className="rounded-full bg-[#ccff00] px-4 py-2 text-sm font-bold text-black"
       >
         Plan { plan.length}
       </Link>
 
       <Link
-        href="/my-plan"
+        href="/myplan"
         className="rounded-full border border-[#ccff00] px-4 py-2 text-sm font-bold text-[#ccff00]"
       >
         Saved {saved.length}

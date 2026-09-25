@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 
 function AddToPlanButton({workout}) {
  const {plan,setPlan} = useContext(FitlogContext)
- console.log(plan)
  const handleAddToButton = () => {
     const alreadyAddedPlan = plan.some(item => item.id === workout.id )
     if (alreadyAddedPlan) {
