@@ -7,8 +7,19 @@ import EmptyState from "@/components/shared/EmptyState";
 
 
 function MyPlanPage() {
-   const { plan, saved } = useContext(FitlogContext);
+   const { plan,setPlan, saved, setSaved } = useContext(FitlogContext);
    const [activeTab, setActiveTab] = useState("plan");
+   const handleCloseBtn = (id) => {
+    if (activeTab ==="plan"){
+        const remainingWorkoutPlan = plan.filter(workout => workout.id !== id) 
+         setPlan(remainingWorkoutPlan)
+    }
+    else {
+      const remainingWorkoutSaved = saved.filter(workout => workout.id !== id) 
+      setSaved(remainingWorkoutSaved)
+    }
+     
+   }
   const currentWorkouts = activeTab === "plan"?plan:saved
   const totalMinutes = currentWorkouts.reduce(
     (total, workout) => total + workout.duration,
@@ -52,7 +63,7 @@ function MyPlanPage() {
         <div className=" grid gap-2">
         {
         currentWorkouts.map((workout) => (
-        <SelectedCard key={workout.id} workout={workout} />
+        <SelectedCard key={workout.id} handleCloseBtn={handleCloseBtn} workout={workout} />
        ))
          }
   </div>
@@ -67,7 +78,7 @@ function MyPlanPage() {
       <div className="grid gap-2">
           {
             currentWorkouts.map((workout) => (
-            <SelectedCard key={workout.id} workout={workout} />
+            <SelectedCard key={workout.id} handleCloseBtn={handleCloseBtn} workout={workout} />
             ))
           }
       </div>

@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 import { FiStar, FiZap } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 
-function  SelectedCard({ workout }) {
+function  SelectedCard({ workout,handleCloseBtn}) {
   return (
     <div className="w-full rounded-2xl border border-gray-800 bg-[#12161c] p-3 flex items-center gap-4">
 
@@ -53,7 +53,7 @@ function  SelectedCard({ workout }) {
           <FaCheck /> Mark as Done
         </button>
 
-        <button className="text-gray-500 hover:text-red-400 text-lg">
+        <button onClick={()=>handleCloseBtn(workout.id)} className="text-gray-500 hover:text-red-400 text-lg">
           <IoClose />
         </button>
 
