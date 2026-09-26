@@ -49,7 +49,7 @@ function  SelectedCard({ workout,handleCloseBtn}) {
         </button>
        </Link>
 
-        <button className=" flex items-center  gap-2 rounded-full bg-lime-400 px-5 py-2 text-xs font-semibold text-black hover:bg-lime-300">
+        <button onClick={()=>handleCloseBtn(workout.id)} className=" flex items-center  gap-2 rounded-full bg-lime-400 px-5 py-2 text-xs font-semibold text-black hover:bg-lime-300">
           <FaCheck /> Mark as Done
         </button>
 
