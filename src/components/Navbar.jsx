@@ -46,16 +46,16 @@ return (
     <div className="flex items-center gap-2">
       <Link
         href="/myplan"
-        className="rounded-full bg-[#ccff00] px-4 py-2 text-sm font-bold text-black"
+        className="rounded-full px-4 py-2 text-sm font-bold "
       >
-        Plan { plan.length}
+        Plan <span className="bg-[#ccff00] text-black  rounded-full px-1 ">{ plan.length}</span>
       </Link>
 
       <Link
         href="/myplan"
-        className="rounded-full border border-[#ccff00] px-4 py-2 text-sm font-bold text-[#ccff00]"
+        className=" text-sm  "
       >
-        Saved {saved.length}
+        Saved <span className=" border border-gray-400 rounded-full px-1 "> {saved.length}</span>
       </Link>
     </div>
 

@@ -32,7 +32,7 @@ function  SelectedCard({ workout,handleCloseBtn}) {
           </span>
 
           <span className="flex items-center gap-1">
-                <FiZap /> {workout.calories} kcal
+                <FiZap /> {workout.caloriesBurned} kcal
           </span>
 
           <span className="flex items-center gap-1">

@@ -138,7 +138,7 @@ async function WorkoutDetailsPage({ params }) {
                 {workout.instructions.map((instruction, index) => (
                   <li
                     key={instruction}
-                    className="flex gap-2 text-[12px] leading-4 text-gray-400"
+                    className="flex gap-2 text-[14px] leading-4 text-gray-400"
                   >
                     <span className="text-gray-500">
                       {index + 1}.
