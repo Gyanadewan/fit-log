@@ -3,7 +3,7 @@ import React from 'react'
 function loading() {
   return (
     <div>
-       <h2>Loading....</h2>
+      <span className="loading loading-dots loading-md"></span>
     </div>
   )
 }

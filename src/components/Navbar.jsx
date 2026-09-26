@@ -25,8 +25,7 @@ function Navbar() {
             {isMenuOpen ? <IoClose /> : <CiMenuBurger />}
           </button>
 
-          <Link
-            href="/"
+          <div
             className="flex items-center gap-2 text-2xl font-black tracking-wider"
           >
             <Image
@@ -37,7 +36,7 @@ function Navbar() {
             />
 
             <span>FITLOG</span>
-          </Link>
+          </div>
 
           <div className="hidden items-center gap-8 md:flex">
             <Link onClick={()=>setActiveNav("workout")}
