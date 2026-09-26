@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const getWorkout = async (id) => {
   const res = await fetch(
-    `https://api.abcz.workers.dev/api/fitlog/${id}`
+    `https://api.api-store.workers.dev/api/fitlog/${id}`
   );
 
   const data = await res.json();

@@ -10,6 +10,7 @@ import { IoClose } from "react-icons/io5";
 function Navbar() {
   const { plan, saved } = useContext(FitlogContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState ("workout")
 
   return (
     <nav className="border-b border-white/10 bg-black text-white fixed top-0 w-full overflow-hidden z-90">
@@ -39,16 +40,16 @@ function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
-            <Link
+            <Link onClick={()=>setActiveNav("workout")}
               href="/"
-              className="font-medium text-[#ccff00]"
+              className={activeNav=="workout"?"text-[#ccff00] font-medium":""}
             >
               Workout
             </Link>
-
-            <Link
+            
+            <Link onClick={()=>setActiveNav("myplan")}
               href="/myplan"
-              className="font-medium text-gray-400 hover:text-white"
+              className={activeNav=="myplan"?"text-[#ccff00] font-medium hover:text-white":"text-gray-400"}
             >
               My Plan
             </Link>
