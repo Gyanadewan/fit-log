@@ -12,7 +12,7 @@ async function WorkoutsPage() {
     <div className="container mx-auto">
          <h2 className="text-2xl font-bold">THE LIBRARY</h2>
          <p >Twelve lifts covering every major muscle group.</p>
-         <div className="grid grid-cols-3 gap-4 my-10">
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
              {workouts.map((workout) => (
           <div key={workout.id}>
               <WorkoutCard workout={workout} />

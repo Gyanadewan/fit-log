@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { CiClock2 } from "react-icons/ci";
@@ -5,61 +6,72 @@ import { FaCheck } from "react-icons/fa";
 import { FiStar, FiZap } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 
-function  SelectedCard({ workout,handleCloseBtn}) {
+function SelectedCard({ workout, handleCloseBtn }) {
   return (
-    <div className="w-full rounded-2xl border border-gray-800 bg-[#12161c] p-3 flex items-center gap-4">
-
+    <div className="flex w-full flex-col gap-3 rounded-2xl border border-gray-800 bg-[#12161c] p-3 sm:flex-row sm:items-center sm:gap-4">
       <Image
         src={workout.image}
         alt={workout.name}
         width={400}
         height={300}
-        className="w-28 h-16 rounded-lg object-cover"
+        className="h-40 w-full rounded-lg object-cover sm:h-16 sm:w-28"
       />
 
       <div className="flex-1">
-        <h2 className="text-sm font-bold text-white uppercase">
+        <h2 className="text-sm font-bold uppercase text-white">
           {workout.name}
         </h2>
 
-        <p className="text-xs text-gray-400 mt-1">
+        <p className="mt-1 text-xs text-gray-400">
           {workout.category}
         </p>
 
-        <div className="flex items-center gap-4 mt-2 text-xs text-gray-300">
+        <div className="mt-2 flex items-center gap-3 text-xs text-gray-300 sm:gap-4">
           <span className="flex items-center gap-1">
-            <CiClock2 />{workout.duration} min
+            <CiClock2 />
+            {workout.duration} min
           </span>
 
           <span className="flex items-center gap-1">
-                <FiZap /> {workout.caloriesBurned} kcal
+            <FiZap />
+            {workout.caloriesBurned} kcal
           </span>
 
           <span className="flex items-center gap-1">
-                <FiStar/> {workout.rating}
+            <FiStar />
+            {workout.rating}
           </span>
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Link
+          href={`/workouts/${workout.id}`}
+          className="flex-1 sm:flex-none"
+        >
+          <button className="w-full rounded-full border border-gray-700 px-3 py-2 text-xs text-white hover:bg-gray-800 sm:px-5">
+            View Details
+          </button>
+        </Link>
 
-       <Link href={`/workouts/${workout.id}`}>
-          <button className="rounded-full border border-gray-700 px-5 py-2 text-xs text-white hover:bg-gray-800">
-          View Details
+        <button
+          onClick={() => handleCloseBtn(workout.id)}
+          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-lime-400 px-3 py-2 text-xs font-semibold text-black hover:bg-lime-300 sm:flex-none sm:px-5"
+        >
+          <FaCheck />
+          <span>Mark as Done</span>
         </button>
-       </Link>
 
-        <button onClick={()=>handleCloseBtn(workout.id)} className=" flex items-center  gap-2 rounded-full bg-lime-400 px-5 py-2 text-xs font-semibold text-black hover:bg-lime-300">
-          <FaCheck /> Mark as Done
-        </button>
-
-        <button onClick={()=>handleCloseBtn(workout.id)} className="text-gray-500 hover:text-red-400 text-lg">
+        <button
+          onClick={() => handleCloseBtn(workout.id)}
+          className="text-lg text-gray-500 hover:text-red-400"
+        >
           <IoClose />
         </button>
-
       </div>
     </div>
   );
 }
 
 export default SelectedCard;
+

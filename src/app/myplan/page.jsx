@@ -61,7 +61,7 @@ function MyPlanPage() {
   );
 
   return (
-    <div className="container mx-auto my-5">
+    <div className="container mx-auto my-20 m:my-5">
       <h2 className="text-3xl font-bold">MY PLAN</h2>
 
       <p className="text-gray-300">
@@ -93,7 +93,7 @@ function MyPlanPage() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="select select-sm absolute right-4 top-1 z-10"
+          className="select select-xs absolute right-2 top-1 z-10 max-md:h-6 max-md:w-24 max-md:px-1 max-md:text-[9px] md:select-sm"
         >
           <option value="duration">Sort By: Duration</option>
           <option value="calories">Calories</option>

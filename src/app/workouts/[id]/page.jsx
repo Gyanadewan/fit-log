@@ -18,8 +18,8 @@ async function WorkoutDetailsPage({ params }) {
   const workout = await getWorkout(id);
 
   return (
-    <div className="container mx-auto px-4 pt-10 py-10">
-      <div className="mx-auto max-w-5xl overflow-hidden text-white">
+    <div className="container mx-auto py-20">
+      <div className="mx-auto max-w-5xl overflow-hidden text-white bg-gray-800 p-5 rounded-2xl">
 
         <div className="grid md:grid-cols-2 gap-5 px-5">
 

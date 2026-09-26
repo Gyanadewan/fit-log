@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#090A0D] border-t border-gray-600">
         <div className="container mx-auto ">
-            <div className="flex justify-between p-10">
-               <div className="flex items-center gap-2">
+            <div className="flex flex-col md:flex-row justify-between p-10">
+               <div className="flex items-center gap-2 md:py-0 py-4">
                 <Image
                   src={Footerlogo}
                   alt="Nothing here"
