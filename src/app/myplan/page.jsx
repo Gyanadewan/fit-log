@@ -3,6 +3,7 @@
 import { useContext, useState } from "react";
 import { FitlogContext } from "../context/FitLogContext";
 import SelectedCard from "@/components/shared/SelectedCard";
+import EmptyState from "@/components/shared/EmptyState";
 
 
 function MyPlanPage() {
@@ -44,27 +45,32 @@ function MyPlanPage() {
             <div className="tabs tabs-border">
         <input onChange={() => setActiveTab("plan")} type="radio" name="my_tabs_2" className="tab" aria-label="Today’s Plan"  checked={activeTab === "plan"} />
        <div className="tab-content border-base-300 bg-base-100 p-10">   
-   {currentWorkouts.length === 0 ? (
-  <p className="text-center text-2xl font-bold text-gray-400 py-10">
-    NOTHING HERE YET
-  </p>
-) : (
-  currentWorkouts.map((workout) => (
-    <SelectedCard key={workout.id} workout={workout} />
-  ))
-   )}
+
+         {currentWorkouts.length === 0 ? (
+             <EmptyState></EmptyState>
+         ) : (
+        <div className=" grid gap-2">
+        {
+        currentWorkouts.map((workout) => (
+        <SelectedCard key={workout.id} workout={workout} />
+       ))
+         }
+  </div>
+      )}
        </div>
          <input onChange={() => setActiveTab("saved")} type="radio" name="my_tabs_2" className="tab" aria-label="Saved"  checked={activeTab === "saved"} />
           <div className="tab-content border-base-300 bg-base-100 p-10">
               
       {currentWorkouts.length === 0 ? (
-     <p className="text-center text-2xl font-bold text-gray-400 py-10">
-       NOTHING HERE YET
-     </p>
+          <EmptyState></EmptyState>
     ) : (
-  currentWorkouts.map((workout) => (
-    <SelectedCard key={workout.id} workout={workout} />
-  ))
+      <div className="grid gap-2">
+          {
+            currentWorkouts.map((workout) => (
+            <SelectedCard key={workout.id} workout={workout} />
+            ))
+          }
+      </div>
    )}
    </div>
       </div>

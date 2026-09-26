@@ -11,7 +11,6 @@ function WorkoutCard({ workout }) {
       <Link href={`/workouts/${workout.id}`}>
         <div className="overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] text-white">
 
-      {/* Image */}
       <div className="relative h-48 w-full">
         <Image
           src={workout.image}
@@ -21,10 +20,8 @@ function WorkoutCard({ workout }) {
         />
       </div>
 
-      {/* Content */}
       <div className="p-5">
 
-        {/* Muscle Groups */}
         <div className="mb-2 flex gap-2">
           {workout.muscleGroups.map((muscle) => (
             <span
@@ -36,20 +33,17 @@ function WorkoutCard({ workout }) {
           ))}
         </div>
 
-        {/* Workout Name */}
         <h2 className="text-xl font-black uppercase">
           {workout.name}
         </h2>
 
-        {/* Equipment */}
         <p className="mt-1 text-sm text-gray-500">
           {workout.equipment}
         </p>
 
-        {/* Divider */}
+  
         <div className="my-4 border-t border-white/10"></div>
 
-        {/* Stats */}
         <div className="flex items-center gap-4 text-sm text-gray-400">
             <div className="flex   items-center gap-1">
               <CiClock2 />

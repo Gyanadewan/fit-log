@@ -1,13 +1,17 @@
-
-
-import { IoIosFitness } from "react-icons/io"
+import Image from "next/image"
+import Footerlogo from "@/assets/logo.png"
 const Footer = () => {
   return (
     <footer className="bg-[#090A0D] border-t border-gray-600">
         <div className="container mx-auto ">
             <div className="flex justify-between p-10">
-               <div className="flex items-center gap-1">
-                 <IoIosFitness className="text-3xl  text-[#ccff00]" />
+               <div className="flex items-center gap-2">
+                <Image
+                  src={Footerlogo}
+                  alt="Nothing here"
+                  width={20}
+                  height={10}
+                   />
                 <span className="text-xl font-semibold">FITLOG</span>
                </div>
               <div>
