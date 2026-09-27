@@ -29,7 +29,7 @@ FitLog is a modern workout library application where users can explore different
 
 ## Live Link
 
-[View Live Project](fit-log-mocha.vercel.app)
+[View Live Project](https://fit-log-mocha.vercel.app/)
 
 ## GitHub Repository
 
